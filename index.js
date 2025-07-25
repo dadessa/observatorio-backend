@@ -18,5 +18,9 @@ mongoose.connect(process.env.MONGODB_URI, {
 const submissaoRoutes = require('./routes/submissaoRoutes');
 app.use('/api/submissoes', submissaoRoutes);
 
+app.get('/', (req, res) => {
+  res.send('🚀 API do Observatório da Desinformação está online!');
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Servidor rodando na porta ${PORT}`));
